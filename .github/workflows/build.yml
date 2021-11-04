@@ -18,19 +18,19 @@ jobs:
     - name: Change googletest build dir permissions
       working-directory: /usr/src/googletest
       run: sudo chown *user*:*group* build
-    - name: Run cmake
+    - name: Run cmake for googletest
       working-directory: /usr/src/googletest/build
       run: cmake ..
-    - name: Create googletest build dir
+    - name: Build googletest
       working-directory: /usr/src/googletest/build
       run: make
-    - name: Create googletest build dir
+    - name: Install googletest
       working-directory: /usr/src/googletest/build
       run: sudo make install
-    - name: Create build dir
+    - name: Create sysmon build dir
       run: mkdir build_sysmon
-    - name: Run cmake
+    - name: Run sysmon cmake
       working-directory: build_sysmon
       run: cmake ..
-    - name: Build
+    - name: Build sysmon
       run: make
