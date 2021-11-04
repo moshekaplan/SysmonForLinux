@@ -26,6 +26,11 @@ jobs:
       run: sudo make install
     - name: Create sysmon build dir
       run: mkdir build_sysmon
+    - name: run pwd
+      run: pwd
+    - name: run pwd2
+      working-directory: build_sysmon
+      run: pwd
     - name: Run sysmon cmake
       working-directory: build_sysmon
       run: cmake ..
