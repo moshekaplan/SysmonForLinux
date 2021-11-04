@@ -39,4 +39,5 @@ jobs:
     - name: Run sysmon cmake
       run: cmake -S . -B build_sysmon
     - name: Build sysmon
+      working-directory: build_sysmon
       run: make
