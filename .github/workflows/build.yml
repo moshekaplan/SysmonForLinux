@@ -1,0 +1,13 @@
+name: Build
+on: [push, pull_request]
+jobs:
+  build_sysmon:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Create build dir
+      run: mkdir build_sysmon
+    - name: Run cmake
+      working-directory: build_sysmon
+      run: cmake ..
+    - name: Build
+      run: make
