@@ -14,14 +14,11 @@ jobs:
       run: sudo apt -y install build-essential gcc g++ make cmake libelf-dev llvm clang libxml2 libxml2-dev libzstd1 git libgtest-dev apt-transport-https dirmngr monodevelop googletest google-mock libjson-glib-dev
     - name: Create googletest build dir
       working-directory: /usr/src/googletest
-      run: mkdir build
-    - name: Create googletest build dir
+      run: sudo mkdir build
+    - name: Change googletest build dir permissions
       working-directory: /usr/src/googletest
-      run: chown *user*:*group* build
-    - name: Create googletest build dir
-      working-directory: /usr/src/googletest
-      run: chown *user*:*group* build
-    - name: Create googletest build dir
+      run: sudo chown *user*:*group* build
+    - name: Run cmake
       working-directory: /usr/src/googletest/build
       run: cmake ..
     - name: Create googletest build dir
