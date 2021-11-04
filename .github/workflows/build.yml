@@ -15,15 +15,12 @@ jobs:
     - name: Create googletest build dir
       working-directory: /usr/src/googletest
       run: sudo mkdir build
-    - name: Change googletest build dir permissions
-      working-directory: /usr/src/googletest
-      run: sudo chown *user*:*group* build
     - name: Run cmake for googletest
       working-directory: /usr/src/googletest/build
-      run: cmake ..
+      run: sudo cmake ..
     - name: Build googletest
       working-directory: /usr/src/googletest/build
-      run: make
+      run: sudo make
     - name: Install googletest
       working-directory: /usr/src/googletest/build
       run: sudo make install
